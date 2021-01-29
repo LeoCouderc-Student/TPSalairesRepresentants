@@ -83,5 +83,62 @@ public class TestRepresentant {
 
 	}
 	
+	@Test
+	public void testMoisNegatifImpossibleEnregistrerCA() {
+		
+		try {
+			// On enregistre un CA négatif, que doit-il se passer ?
+			// On s'attend à recevoir une exception
+			r.enregistrerCA(-1, 10000f);
+			// Si on arrive ici, c'est une erreur, le test doit échouer
+			fail("Un CA négatif doit générer une exception"); // Forcer l'échec du test			
+		} catch (IllegalArgumentException e) {
+			// Si on arrive ici, c'est normal, c'est le comportement attendu
+		}
+
+	}
 	
+	@Test
+	public void testMoisSuperieurImpossibleEnregistrerCA() {
+		
+		try {
+			// On enregistre un CA négatif, que doit-il se passer ?
+			// On s'attend à recevoir une exception
+			r.enregistrerCA(13, 10000f);
+			// Si on arrive ici, c'est une erreur, le test doit échouer
+			fail("Un CA négatif doit générer une exception"); // Forcer l'échec du test			
+		} catch (IllegalArgumentException e) {
+			// Si on arrive ici, c'est normal, c'est le comportement attendu
+		}
+
+	}
+	
+	@Test
+	public void testMoisNegatifImpossibleSalaireMensuel() {
+		
+		try {
+			// On enregistre un CA négatif, que doit-il se passer ?
+			// On s'attend à recevoir une exception
+			r.salaireMensuel(-1, 1f);
+			// Si on arrive ici, c'est une erreur, le test doit échouer
+			fail("Un CA négatif doit générer une exception"); // Forcer l'échec du test			
+		} catch (IllegalArgumentException e) {
+			// Si on arrive ici, c'est normal, c'est le comportement attendu
+		}
+
+	}
+	
+	@Test
+	public void testMoisSuperieurImpossibleSalaireMensuel() {
+		
+		try {
+			// On enregistre un CA négatif, que doit-il se passer ?
+			// On s'attend à recevoir une exception
+			r.salaireMensuel(13, 1f);
+			// Si on arrive ici, c'est une erreur, le test doit échouer
+			fail("Un CA négatif doit générer une exception"); // Forcer l'échec du test			
+		} catch (IllegalArgumentException e) {
+			// Si on arrive ici, c'est normal, c'est le comportement attendu
+		}
+	}
 }
